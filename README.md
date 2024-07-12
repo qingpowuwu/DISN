@@ -23,24 +23,7 @@ Code contact: [Qiangeng Xu*](https://xharlie.github.io/) and [Weiyue Wang*](http
 <img src="./result.png"  />
 
 ## Installation
-  ```
-    pip install trimesh==2.37.20
-    cd {DISN}
-    mkdir checkpoint
-    cd checkpoint
-    wget https://www.dropbox.com/s/2ts7qc9w4opl4w4/SDF_DISN.tar?dl=0
-    tar -xvzf SDF_DISN.tar?dl=0
-    rm -rf SDF_DISN.tar?dl=0
-    cd ..
-    mkdir cam_est/checkpoint
-    cd cam_est/checkpoint
-    wget https://www.dropbox.com/s/hyv4lcvpfu0au9e/cam_DISN.tar?dl=0
-    tar -xvzf cam_DISN.tar?dl=0
-    rm -rf cam_DISN.tar?dl=0
-    cd ../../
-    change corresponding libary path in your system in isosurface/LIB_PATH
-  ```
- 因为上面提到的2个资源都不能下载了，所以我从脚本中删除相关的代码：
+ 因为原 repo 提到的2个资源都不能下载了，所以我从脚本中删除相关的代码：
   ```
   pip install trimesh==2.37.20
   cd /data/3dPrinter/5_DISN-master
@@ -51,16 +34,6 @@ Code contact: [Qiangeng Xu*](https://xharlie.github.io/) and [Weiyue Wang*](http
   # 修改系统中的库路径
   change corresponding library path in your system in isosurface/LIB_PATH
   ```
-
-
-## Demo:
- * --sdf_res control the resolution of the sampled sdf, default is 64, the larger, the more fine-grained, but slower.
-  ```
-    cd {DISN}
-    source isosurface/LIB_PATH
-    nohup python -u demo/demo.py --cam_est --log_dir checkpoint/SDF_DISN --cam_log_dir cam_est/checkpoint/cam_DISN --img_feat_twostream --sdf_res 256 &> log/create_sdf.log &
-  ``` 
-  The result is demo/result.obj.
   
 ## Data Preparation
 
@@ -83,11 +56,9 @@ Code contact: [Qiangeng Xu*](https://xharlie.github.io/) and [Weiyue Wang*](http
   cd {your download dir}
   wget http://shapenet.cs.stanford.edu/shapenet/obj-zip/ShapeNetCore.v1.zip 
   unzip ShapeNetCore.v1.zip -d {your mesh_dir}
+  <img width="375" alt="Screenshot 2024-07-13 at 12 50 31 AM" src="https://github.com/user-attachments/assets/ff844ca2-1283-49f3-b82a-3b0ae0866e9a">
+
   ```
-  * 用 aria2 下载 (source: https://hyper.ai/datasets/16769)
-    ```
-    aria2c -c -j16 -s16 -x16 --follow-torrent=mem -o 'hyperai.torrent' 'https://orion.hyper.ai/tracker/download?torrent=18364'
-    ```
   * 直接百度云
     ```
     链接：https://pan.baidu.com/s/1WnJIAk4slq99GzE08dELqA 
@@ -120,6 +91,15 @@ To generate sdf files and the reconstructed models by yourself (Please expect th
   cd {DISN}
   nohup python -u preprocessing/create_img_h5.py &> log/create_imgh5.log &
   ```
+
+## Demo:
+ * --sdf_res control the resolution of the sampled sdf, default is 64, the larger, the more fine-grained, but slower.
+  ```
+    cd {DISN}
+    source isosurface/LIB_PATH
+    nohup python -u demo/demo.py --cam_est --log_dir checkpoint/SDF_DISN --cam_log_dir cam_est/checkpoint/cam_DISN --img_feat_twostream --sdf_res 256 &> log/create_sdf.log &
+  ``` 
+  The result is demo/result.obj.
 
 ##  Camera parameters estimation network
 
