@@ -75,6 +75,12 @@ Code contact: [Qiangeng Xu*](https://xharlie.github.io/) and [Weiyue Wang*](http
     ```
     aria2c -c -j16 -s16 -x16 --follow-torrent=mem -o 'hyperai.torrent' 'https://orion.hyper.ai/tracker/download?torrent=18364'
     ```
+  * 直接百度云
+    ```
+    链接：https://pan.baidu.com/s/1WnJIAk4slq99GzE08dELqA 
+    提取码：aic6 
+    ```
+    
 * ### Prepare SDF files and marching cube ground truth model
 To directly download the generated sdf and model, follow the instruction [here](https://github.com/Xharlie/DISN)
 To generate sdf files and the reconstructed models by yourself (Please expect the script to run for several hours), please execute the following command lines
