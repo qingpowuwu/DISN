@@ -71,7 +71,10 @@ Code contact: [Qiangeng Xu*](https://xharlie.github.io/) and [Weiyue Wang*](http
   wget http://shapenet.cs.stanford.edu/shapenet/obj-zip/ShapeNetCore.v1.zip 
   unzip ShapeNetCore.v1.zip -d {your mesh_dir}
   ```
-  
+  * 用 aria2 下载 (source: https://hyper.ai/datasets/16769)
+    ```
+    aria2c -c -j16 -s16 -x16 --follow-torrent=mem -o 'hyperai.torrent' 'https://orion.hyper.ai/tracker/download?torrent=18364'
+    ```
 * ### Prepare SDF files and marching cube ground truth model
 To directly download the generated sdf and model, follow the instruction [here](https://github.com/Xharlie/DISN)
 To generate sdf files and the reconstructed models by yourself (Please expect the script to run for several hours), please execute the following command lines
