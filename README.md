@@ -44,10 +44,10 @@ Code contact: [Qiangeng Xu*](https://xharlie.github.io/) and [Weiyue Wang*](http
   ```
   pip install trimesh==2.37.20
   cd /data/3dPrinter/5_DISN-master
-  # 创建 checkpoint 目录（保留此目录以备将来使用）
+  # 创建必要的目录（保留此目录以备将来使用）
   mkdir -p checkpoint
-  # 创建 cam_est/checkpoint 目录（保留此目录以备将来使用）
   mkdir -p cam_est/checkpoint
+  mkdir -p log
   # 修改系统中的库路径
   change corresponding library path in your system in isosurface/LIB_PATH
   ```
