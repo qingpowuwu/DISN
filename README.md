@@ -66,15 +66,15 @@ Code contact: [Qiangeng Xu*](https://xharlie.github.io/) and [Weiyue Wang*](http
     ```
     
 * ### Prepare SDF files and marching cube ground truth model
-To directly download the generated sdf and model, follow the instruction [here](https://github.com/Xharlie/DISN)
-To generate sdf files and the reconstructed models by yourself (Please expect the script to run for several hours), please execute the following command lines
-    Our data preparation used this paper [Vega: non-linear fem deformable object simulator](http://run.usc.edu/vega/SinSchroederBarbic2012.pdf). Please also cite it if you use our code to generate sdf files
-  ```
-  mkdir log
-  cd {DISN}
-  source isosurface/LIB_PATH
-  nohup python -u preprocessing/create_point_sdf_grid.py --thread_num {recommend 9} --category {default 'all', but can be single category like 'chair'} &> log/create_sdf.log &
-  
+  To directly download the generated sdf and model, follow the instruction [here](https://github.com/Xharlie/DISN)
+  To generate sdf files and the reconstructed models by yourself (Please expect the script to run for several hours), please execute the following command lines
+      Our data preparation used this paper [Vega: non-linear fem deformable object simulator](http://run.usc.edu/vega/SinSchroederBarbic2012.pdf). Please also cite it if you use our code to generate sdf files
+    ```
+    mkdir log
+    cd {DISN}
+    source isosurface/LIB_PATH
+    nohup python -u preprocessing/create_point_sdf_grid.py --thread_num {recommend 9} --category {default 'all', but can be single category like 'chair'} &> log/create_sdf.log &
+    
   ## SDF folder takes about 9.0G, marching cube obj folder takes about 245G
   
   ```
